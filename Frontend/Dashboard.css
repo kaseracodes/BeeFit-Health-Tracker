@@ -1,0 +1,44 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.Branding {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.Branding img {
+    margin: 24px 0 24px 0;
+    height: 180px;
+    width: 180px;
+}
+
+.LeftDock {
+    background-color: #dd9c1d;
+    width: 240px;
+    height: 100%;
+}
+
+.LeftDockButtons {
+    background-color: transparent;
+    border-color: transparent;
+    color: white;
+    font-size: 20px;
+    padding: 16px 0px 16px 0px;
+    margin: 0 8px 0 8px;
+}
+
+.LeftDockButtons:hover{
+    background-color: #be6415;
+    color: white;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.LeftDockButtonContainer {
+    display: flex;
+    flex-direction: column;
+}
