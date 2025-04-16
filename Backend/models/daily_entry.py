@@ -1,6 +1,6 @@
-from app import db
+from extensions  import db
 
-class DailyEntry(db.model):
+class DailyEntry(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.Date, nullable=False)
     weight_kg = db.Column(db.Float)
@@ -8,7 +8,7 @@ class DailyEntry(db.model):
     sleep_hours = db.Column(db.Float)
     calories_consumed = db.Column(db.Integer)
     water_intake_liters = db.Column(db.Float)
-    heart_rate_bpm =  db.Column(db.Integer)
+    heart_rate_bpm = db.Column(db.Integer)
     mood = db.Column(db.String(50))
     stress_level = db.Column(db.Integer)
     workout_type = db.Column(db.String(50))

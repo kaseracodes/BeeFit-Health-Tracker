@@ -1,9 +1,8 @@
 from flask import Blueprint, request, jsonify
-
 from controllers import daily_entry as controller
 from schemas.daily_entry import DailyEntrySchema
 
-daily_entry_bp = Blueprint('daily_entry_bp', __name__ )
+daily_entry_bp = Blueprint('daily_entry_bp', __name__)
 entry_schema = DailyEntrySchema()
 entries_schema = DailyEntrySchema(many=True)
 
@@ -27,11 +26,9 @@ def get_one(id):
 def update(id):
     data = request.get_json()
     entry = controller.update_entry(id, data)
-    return entry_schema(entry), 200
+    return entry_schema.jsonify(entry), 200
 
 @daily_entry_bp.route('/<int:id>', methods=['DELETE'])
 def delete(id):
     controller.delete_entry(id)
-    return jsonify({
-        'message': 'Entry Deleted'
-    }), 204
+    return jsonify({'message': 'Entry deleted'}), 204

@@ -1,5 +1,5 @@
 from models.daily_entry import DailyEntry
-from app import db
+from extensions import db
 
 def create_entry(data):
     entry = DailyEntry(**data)
